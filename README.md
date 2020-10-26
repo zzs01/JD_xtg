@@ -2,7 +2,7 @@
 
 # MyActions
 ### 手动star来执行action
-* 我这里有八个星推官,每个需要不同的cookie，按```JD_COOKIE1, JD_COOKIE2, JD_COOKIE3, ..., JD_COOKIE8```以此类推添加八个cookie
+* 暂时只支持八个账号，如果需要更多请自己添加yml文件
 ### 本项目已可以实现自动同步上游更改！[具体点击](#自动同步)
 
 目前[@lxk0301](https://github.com/lxk0301) 的代码都支持无限账号了，各位可以直接使用那边的了呢
