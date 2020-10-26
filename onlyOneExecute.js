@@ -15,6 +15,7 @@ const Secrets = {
     JoyFeedCount: process.env.JDJoyFeedCount, //宠汪汪喂食数量
     FruitShareCodes: process.env.FruitShareCodes, //京东农场分享码
     Unsubscribe: process.env.UNSUBSCRIBE, //取关商铺
+    LOCATION: process.env.LOCATION, //第几个yml
 };
 
 async function downFile() {
@@ -31,6 +32,7 @@ async function changeFiele() {
 
 async function start() {
     console.log(`当前执行时间:${new Date().toString()}`);
+    Secrets.JD_COOKIE = Secrets.JD_COOKIE.split("&").[parseInt(LOCATION)]
     if (!Secrets.JD_COOKIE) {
         console.log("请填写 JD_COOKIE 后在继续");
         return;
