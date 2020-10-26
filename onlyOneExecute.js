@@ -32,7 +32,7 @@ async function changeFiele() {
 
 async function start() {
     console.log(`当前执行时间:${new Date().toString()}`);
-    Secrets.JD_COOKIE = Secrets.JD_COOKIE.split("&").[parseInt(LOCATION)]
+    Secrets.JD_COOKIE = Secrets.JD_COOKIE.split("&").[Number(Secrets.LOCATION)]
     if (!Secrets.JD_COOKIE) {
         console.log("请填写 JD_COOKIE 后在继续");
         return;
@@ -41,7 +41,7 @@ async function start() {
         console.log("请填写 SYNCURL 后在继续");
         return;
     }
-    console.log(`当前共${Secrets.JD_COOKIE.split("&").length}个账号需要签到`);
+    console.log(`当前共${Secrets.JD_COOKIE.split("&").length}个账号需要签到,只执行第${Number(Secrets.LOCATION)}个`);
     try {
         await downFile();
         await changeFiele();
