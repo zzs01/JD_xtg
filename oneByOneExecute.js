@@ -11,6 +11,7 @@ const Secrets = {
     BARK_PUSH: process.env.BARK_PUSH, //Bark推送
     TG_BOT_TOKEN: process.env.TG_BOT_TOKEN, //TGBot推送Token
     TG_USER_ID: process.env.TG_USER_ID, //TGBot推送成员ID
+    LOCATION: process.env.LOCATION, //第几个yml
 };
 let CookieJDs = [];
 
@@ -25,17 +26,15 @@ async function changeFiele(content, cookie) {
 
 async function executeOneByOne() {
     const content = await fs.readFileSync("./temp.js", "utf8");
-    for (var i = 0; i < CookieJDs.length; i++) {
-        console.log(`正在执行第${i + 1}个账号签到任务`);
-        await changeFiele(content, CookieJDs[i]);
-        console.log("替换变量完毕");
-        try {
-            await exec("node execute.js", { stdio: "inherit" });
-        } catch (e) {
-            console.log("执行异常:" + e);
-        }
-        console.log("执行完毕");
+    console.log(`正在执行第${parseInt(LOCATION)}个账号签到任务`);
+    await changeFiele(content, CookieJDs[parseInt(LOCATION)]);
+    console.log("替换变量完毕");
+    try {
+        await exec("node execute.js", { stdio: "inherit" });
+    } catch (e) {
+        console.log("执行异常:" + e);
     }
+    console.log("执行完毕");
 }
 
 async function start() {
@@ -57,7 +56,7 @@ async function start() {
     } else {
       CookieJDs = Secrets.JD_COOKIE.split();
     }
-    console.log(`当前共${CookieJDs.length}个账号需要签到`);
+    console.log(`当前共${CookieJDs.length}个账号需要签到，只执行第${LOCATION}个`);
     // 下载最新代码
     await downFile();
     console.log("下载代码完毕");
