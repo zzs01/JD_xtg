@@ -27,7 +27,7 @@ async function changeFiele(content, cookie) {
 async function executeOneByOne() {
     const content = await fs.readFileSync("./temp.js", "utf8");
     console.log(`正在执行第${parseInt(LOCATION)}个账号签到任务`);
-    await changeFiele(content, CookieJDs[parseInt(LOCATION)]);
+    await changeFiele(content, CookieJDs[Number(LOCATION)-1]);
     console.log("替换变量完毕");
     try {
         await exec("node execute.js", { stdio: "inherit" });
