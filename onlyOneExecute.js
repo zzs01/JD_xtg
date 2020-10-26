@@ -34,7 +34,7 @@ async function start() {
     console.log(`当前执行时间:${new Date().toString()}`);
     let CookieJDs = [];
     CookieJDs = Secrets.JD_COOKIE.split('&');
-    Secrets.JD_COOKIE = CookieJDs.[Number(Secrets.LOCATION)-1]
+    Secrets.JD_COOKIE = CookieJDs[Number(Secrets.LOCATION)-1]
     if (!Secrets.JD_COOKIE) {
         console.log("请填写 JD_COOKIE 后在继续");
         return;
