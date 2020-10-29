@@ -46,10 +46,10 @@ async function start() {
         return;
     }
     if (Secrets.LOCATION) {	
-    	console.log(`当前共${Secrets.JD_COOKIE.split("&").length}个账号需要签到,只执行第${Number(Secrets.LOCATION)}个`);
+    	console.log(`当前共${CookieJDs.length}个账号需要签到,只执行第${Number(Secrets.LOCATION)}个`);
     }
     else{
-    	console.log(`当前共${Secrets.JD_COOKIE.split("&").length}个账号需要签到`);
+    	console.log(`当前共${CookieJDs.length}个账号需要签到`);
     }
     function startTime(){
         let targetTimezone = -8 ; // 目标时区，东9区
