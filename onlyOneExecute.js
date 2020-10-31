@@ -61,7 +61,7 @@ async function start() {
         let today=new Date(east8time);
         const start_run = new Date(new Date().toLocaleDateString());
         start_run.setTime(start_run.getTime() + 3600 * 1000 * 24 * 1);
-        let wait_time = start_run - today + 90*1000;
+        let wait_time = start_run - today + 45*1000;
         return wait_time;
     }
 	
