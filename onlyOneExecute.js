@@ -57,7 +57,7 @@ async function start() {
         // 本地时区时间 + 时差  = 中时区时间
         // 目标时区时间 + 时差 = 中时区时间
         // 目标时区时间 = 本地时区时间 + 本地时区时差 - 目标时区时差
-        let east8time = new Date().getTime() + _dif * 60 * 1000 - (targetTimezone * 60 * 60 * 1000) // 东8区时间
+        let east8time = new Date().getTime() + _dif * 60 * 1000 - (targetTimezone * 60 * 60 * 1000) - 60*1000// 东8区时间
         let today=new Date(east8time);
         const start_run = new Date(new Date().toLocaleDateString());
         start_run.setTime(start_run.getTime() + 3600 * 1000 * 24 * 1);
