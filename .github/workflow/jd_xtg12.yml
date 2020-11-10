@@ -37,4 +37,4 @@ jobs:
                   TG_USER_ID: ${{ secrets.TG_USER_ID }}
                   DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
                   DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
-                  SYNCURL: https://github.com/lxk0301/jd_scripts/blob/master/jd_xtg.js
+                  SYNCURL: https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_xtg.js
