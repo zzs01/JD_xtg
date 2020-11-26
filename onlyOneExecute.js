@@ -11,6 +11,8 @@ const Secrets = {
     BARK_PUSH: process.env.BARK_PUSH, //Bark推送
     TG_BOT_TOKEN: process.env.TG_BOT_TOKEN, //TGBot推送Token
     TG_USER_ID: process.env.TG_USER_ID, //TGBot推送成员ID
+    DD_BOT_TOKEN: process.env.DD_BOT_TOKEN, //钉钉推送Token
+    DD_BOT_SECRET: process.env.DD_BOT_SECRET, //钉钉推送SECRET
     MarketCoinToBeanCount: process.env.JDMarketCoinToBeans, //京小超蓝币兑换京豆数量
     JoyFeedCount: process.env.JDJoyFeedCount, //宠汪汪喂食数量
     FruitShareCodes: process.env.FruitShareCodes, //京东农场分享码
